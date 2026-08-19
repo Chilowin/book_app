@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../models/book.dart';
 import '../services/mock_data.dart';
 
@@ -53,6 +54,7 @@ class _ListeScreenState extends State<ListeScreen> {
                     ),
                     title: Text(livre.titre),
                     subtitle: Text(livre.auteur),
+                    onTap: () => context.go('/livre/${livre.id}'),
                   ),
                 );
               },
