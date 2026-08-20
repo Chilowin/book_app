@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../screens/accueil_screen.dart';
 import '../screens/avis_screen.dart';
@@ -7,7 +6,7 @@ import '../screens/detail_screen.dart';
 import '../screens/liste_screen.dart';
 import '../screens/parametres_screen.dart';
 
-GoRouter createRouter(VoidCallback onToggleTheme, bool isDarkMode) {
+GoRouter createRouter(ValueChanged<bool> onToggleTheme, bool isDarkMode) {
   return GoRouter(
     initialLocation: '/',
     routes: [

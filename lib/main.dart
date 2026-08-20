@@ -23,11 +23,9 @@ class _MyAppState extends State<MyApp> {
     _router = createRouter(_toggleTheme, _themeMode == ThemeMode.dark);
   }
 
-  void _toggleTheme() {
+  void _toggleTheme(bool isDarkMode) {
     setState(() {
-      _themeMode = _themeMode == ThemeMode.light
-          ? ThemeMode.dark
-          : ThemeMode.light;
+      _themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
       _router = createRouter(_toggleTheme, _themeMode == ThemeMode.dark);
     });
   }

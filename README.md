@@ -6,25 +6,44 @@ Application Flutter multi écrans pour gestion de livres
 
 ## Fonctionnalités
 
--Listes de Livres avec recherche
--Détails d'un livre avec une note moyenne
--Formulaire d'avis
--Theme Sombre/Clair
--Responsive tablette / téléphone
+- 5 écrans distincts
+- Navigation avec GoRouter (routes nommées)
+- Liste avec recherche/filtrage en temps réel
+- Détail avec passage de paramètres via GoRouter
+- Formulaire d'avis avec validation (3 champs)
+- Thème clair/sombre dynamique
+- Responsive mobile/tablet (GridView/ListView)
+- 3 widgets réutilisables (CustomAppBar, BookCard, EmptyState)
+- Séparation UI/données (MockData, StorageService)
 
 ## Instructions de lancement
 
-1. Cloner le repo
-2. `flutter pub get`
-3. `flutter run`
+1. Cloner le repo : `git clone https://github.com/Chilowin/book_app.git`
+2. Installer les dépendances : `flutter pub get`
+3. Lancer l'app : `flutter run`
 
 ## captures d'écran
 
-![Accueil](screenschots/Acceuil.png/)
-![AccueilSombre](screenschots/AcceuilSombre.png)
-![Liste](screenschots/Liste.png)
-![Détail](screenschots/Details.png)
-![Avis](screenschots/Avis.png)
-![AvisErreur](screenschots/AvisErreur.png)
-![Parametres](screenschots/ParametresClaire.png)
-![ParametresSombre](screenschots/ParametresSombre.png)
+![Accueil](screenshots/Acceuil.png)
+![AccueilSombre](screenshots/AcceuilSombre.png)
+![Liste](screenshots/Liste.png)
+![Détail](screenshots/Details.png)
+![Avis](screenshots/Avis.png)
+![AvisErreur](screenshots/AvisErreur.png)
+![Parametres](screenshots/ParametresClaire.png)
+![ParametresSombre](screenshots/ParametresSombre.png)
+
+## Technologies utilisées
+
+- Flutter
+- GoRouter ^14.0.0
+- SharedPreferences ^2.0.0
+
+## Architecture
+
+lib/
+├── models/ (Book, Review)
+├── services/ (MockData, StorageService)
+├── screens/ (5 écrans)
+├── widgets/ (3 widgets réutilisables)
+└── routes/ (GoRouter)

@@ -3,8 +3,7 @@ import '../widgets/custom_app_bar.dart';
 
 class ParametresScreen extends StatelessWidget {
   final bool isDarkMode;
-  final VoidCallback onToggleTheme;
-
+  final ValueChanged<bool> onToggleTheme;
   const ParametresScreen({
     required this.onToggleTheme,
     required this.isDarkMode,
@@ -20,7 +19,7 @@ class ParametresScreen extends StatelessWidget {
           SwitchListTile(
             title: const Text('Thème sombre'),
             value: isDarkMode,
-            onChanged: (_) => onToggleTheme(),
+            onChanged: (val) => onToggleTheme(val),
           ),
         ],
       ),
