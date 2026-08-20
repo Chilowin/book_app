@@ -26,6 +26,7 @@ class Review {
     return {
       'id': id,
       'bookId': bookId,
+      'nom': nom,
       'commentaire': commentaire,
       'note': note,
     };
