@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../services/mock_data.dart';
 
-
 //Changer les placeholder par des images à placer dans un dossier assets après que le projet soit bein fonctionnel.
 class AccueilScreen extends StatelessWidget {
   const AccueilScreen({super.key});
@@ -24,37 +23,46 @@ class AccueilScreen extends StatelessWidget {
               children: livres
                   .map(
                     (livre) => SizedBox(
-                      width: 230,
-                      child: Card(
-                        child: Column(
-                          children: [
-                            /*Image.network(
-                              livre.couverture,
-                              height: 150,
-                              width: 10,
-                              fit: BoxFit.cover,
-                            ),*/
-                            Container(
-                              height: 150,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[300],
+                      width: 130,
+                      child: GestureDetector(
+                        onTap: () => context.go('/livre/${livre.id}'),
+                        child: Card(
+                          child: Column(
+                            children: [
+                              ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  livre.couverture,
+                                  height: 120,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      Container(
+                                        height: 120,
+                                        color: Colors.grey[300],
+                                        child: const Icon(
+                                          Icons.book,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                ),
                               ),
-                              child: const Icon(
-                                Icons.book,
-                                size: 50,
-                                color: Colors.grey,
+                              Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Text(
+                                  livre.titre,
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
-                            ),
-                            Text(
-                              livre.titre,
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            Text(livre.auteur),
-                          ],
+                              Text(
+                                livre.auteur,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

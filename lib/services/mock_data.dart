@@ -10,8 +10,7 @@ class MockData {
         auteur: "Antoine de Saint-Exupéry",
         genre: "Fiction",
         annee: 1943,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/9/9e/Le_Petit_Prince_cover.jpeg",
+        couverture: 'assets/images/1.jpeg',
         resume:
             "Le Petit Prince est un conte poétique et philosophique qui raconte l'histoire d'un petit prince voyageant de planète en planète, rencontrant divers personnages et découvrant les complexités de la vie et de l'amour.",
       ),
@@ -21,8 +20,7 @@ class MockData {
         auteur: "George Orwell",
         genre: "Dystopian",
         annee: 1949,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/c/c3/1984first.jpg",
+        couverture: 'assets/images/2.jpeg',
         resume:
             "1984 est un roman dystopique qui explore les dangers de la surveillance gouvernementale, de la manipulation de l'information et de la perte de liberté individuelle dans une société totalitaire.",
       ),
@@ -32,8 +30,7 @@ class MockData {
         auteur: "Harper Lee",
         genre: "Fiction",
         annee: 1960,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/7/79/To_Kill_a_Mockingbird.JPG",
+        couverture: 'assets/images/3.jpeg',
         resume:
             "To Kill a Mockingbird est un roman qui aborde les thèmes de la justice, de la moralité et des préjugés raciaux à travers les yeux d'une jeune fille dans le sud des États-Unis pendant les années 1930.",
       ),
@@ -43,8 +40,7 @@ class MockData {
         auteur: "Jane Austen",
         genre: "Romance",
         annee: 1813,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/PrideAndPrejudiceTitlePage.jpg/800px-PrideAndPrejudiceTitlePage.jpg",
+        couverture: 'assets/images/4.jpeg',
         resume:
             "Pride and Prejudice est un roman qui explore les thèmes de l'amour, du mariage et des classes sociales à travers l'histoire de la famille Bennet et de leurs interactions avec la société anglaise du début du XIXe siècle.",
       ),
@@ -54,8 +50,7 @@ class MockData {
         auteur: "F. Scott Fitzgerald",
         genre: "Fiction",
         annee: 1925,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/f/f7/TheGreatGatsby_1925jacket.jpeg",
+        couverture: 'assets/images/5.jpeg',
         resume:
             "The Great Gatsby est un roman qui explore les thèmes de l'illusion, de l'amour et de la décadence à travers l 'histoire de Jay Gatsby et de sa quête pour retrouver son amour perdu, Daisy Buchanan, dans le contexte de la société américaine des années 1920.",
       ),
@@ -65,8 +60,7 @@ class MockData {
         auteur: "Charlotte Brontë",
         genre: "Romance",
         annee: 1847,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/5/5e/Jane_Eyre_1847.jpeg",
+        couverture: 'assets/images/4.jpeg',
         resume:
             "Jane Eyre est un roman qui raconte l'histoire d'une jeune gouvernante indépendante et sa relation complexe avec le riche et mystérieux Mr. Rochester.",
       ),
@@ -76,8 +70,7 @@ class MockData {
         auteur: "Jane Austen",
         genre: "Romance",
         annee: 1813,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/0/0b/Orguel_et_Prejuges.jpeg",
+        couverture: 'assets/images/6.jpeg',
         resume:
             "Un classique intemporel qui explore l'amour, le mariage et les conventions sociales à travers les yeux d'Elizabeth Bennet et de monsieur Darcy.",
       ),
@@ -87,8 +80,7 @@ class MockData {
         auteur: "Emily Brontë",
         genre: "Gothic",
         annee: 1847,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/3/3f/Wuthering_Heights_1847.jpeg",
+        couverture: 'assets/images/8.jpeg',
         resume:
             "Un roman gothique intense qui raconte la passion destructrice entre Heathcliff et Catherine dans les landes sauvages du Yorkshire.",
       ),
@@ -98,8 +90,7 @@ class MockData {
         auteur: "J.R.R. Tolkien",
         genre: "Fantasy",
         annee: 1954,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/e/e9/Seigneur_des_anneaux.jpeg",
+        couverture: 'assets/images/7.jpeg',
         resume:
             "Une épopée fantasy magistrale qui suit le voyage de Frodo Sacquet pour détruire l'Anneau Unique et sauver la Terre du Milieu du mal.",
       ),
@@ -109,8 +100,7 @@ class MockData {
         auteur: "Victor Hugo",
         genre: "Historical Fiction",
         annee: 1862,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/2/2a/Les_Miserables.jpeg",
+        couverture: 'assets/images/9.jpeg',
         resume:
             "Un chef-d'œuvre qui raconte l'histoire de Jean Valjean, de sa rédemption et de sa lutte contre la pauvreté et l'injustice dans la France du XIXe siècle.",
       ),
@@ -120,8 +110,7 @@ class MockData {
         auteur: "Gabriel García Márquez",
         genre: "Magical Realism",
         annee: 1967,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/3/3f/Cent_ans_de_solitude.jpeg",
+        couverture: 'assets/images/10.jpeg',
         resume:
             "Un chef-d'œuvre du réalisme magique qui raconte les sept générations de la famille Buendía dans le village imaginaire de Macondo.",
       ),
@@ -131,8 +120,7 @@ class MockData {
         auteur: "Franz Kafka",
         genre: "Fiction",
         annee: 1915,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/a/a3/Metamorphose_Kafka.jpeg",
+        couverture: 'assets/images/4.jpeg',
         resume:
             "Un conte philosophique sur la transformation d'un homme en insecte géant, explorant l'absurdité de l'existence et l'aliénation dans la société moderne.",
       ),
@@ -142,8 +130,7 @@ class MockData {
         auteur: "Gustave Flaubert",
         genre: "Realism",
         annee: 1856,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/f/f0/MadameBovary.jpeg",
+        couverture: 'assets/images/1.jpeg',
         resume:
             "Chef-d'œuvre du réalisme qui peint le portrait d'Emma Bovary, une femme prisonnière de ses illusions romantiques dans une petite province française.",
       ),
@@ -153,8 +140,7 @@ class MockData {
         auteur: "Fiodor Dostoïevski",
         genre: "Philosophical Fiction",
         annee: 1880,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/7/7c/Karamazov.jpeg",
+        couverture: 'assets/images/3.jpeg',
         resume:
             "Un roman philosophique épique qui explore le bien et le mal, la foi et le doute, à travers les vies de trois frères et leur père dans la Russie du XIXe siècle.",
       ),
@@ -164,8 +150,7 @@ class MockData {
         auteur: "Herman Melville",
         genre: "Adventure",
         annee: 1851,
-        couverture:
-            "https://upload.wikimedia.org/wikipedia/en/4/4e/MobyDick.jpeg",
+        couverture: 'assets/images/7.jpeg',
         resume:
             "Une épopée maritime captivante qui suit le capitaine Achab dans sa quête obsessive de la baleine blanche, explorant les thèmes de l'ambition et de la destruction.",
       ),

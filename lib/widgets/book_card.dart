@@ -8,6 +8,27 @@ class BookCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card();
+    return Card(
+      child: ListTile(
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: Image.asset(
+            livre.couverture,
+            width: 50,
+            height: 70,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) => Container(
+              width: 50,
+              height: 70,
+              color: Colors.grey[300],
+              child: const Icon(Icons.book, color: Colors.grey),
+            ),
+          ),
+        ),
+        title: Text(livre.titre, maxLines: 2, overflow: TextOverflow.ellipsis),
+        subtitle: Text(livre.auteur),
+        onTap: onTap,
+      ),
+    );
   }
 }

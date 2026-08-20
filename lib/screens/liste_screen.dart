@@ -1,8 +1,10 @@
 import 'package:book_app/widgets/custom_app_bar.dart';
+import 'package:book_app/widgets/empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../models/book.dart';
 import '../services/mock_data.dart';
+import '../widgets/book_card.dart';
 
 class ListeScreen extends StatefulWidget {
   const ListeScreen({super.key});
@@ -23,6 +25,7 @@ class _ListeScreenState extends State<ListeScreen> {
       .toList();
   @override
   Widget build(BuildContext context) {
+    final estTablet = MediaQuery.of(context).size.width >= 600;
     return Scaffold(
       appBar: CustomAppBar(title: 'Liste'),
       body: Column(
@@ -38,28 +41,33 @@ class _ListeScreenState extends State<ListeScreen> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: _livresFiltres.length,
-              itemBuilder: (context, index) {
-                final livre = _livresFiltres[index];
-                return Card(
-                  child: ListTile(
-                    leading: Container(
-                      width: 50,
-                      height: 70,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: const Icon(Icons.book, color: Colors.grey),
+            child: _livresFiltres.isEmpty
+                ? EmptyState(message: 'Aucun livre pour "$_recherche"')
+                : estTablet
+                ? GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, // 2 colonnes sur tablet
+                      childAspectRatio: 3,
                     ),
-                    title: Text(livre.titre),
-                    subtitle: Text(livre.auteur),
-                    onTap: () => context.go('/livre/${livre.id}'),
+                    itemCount: _livresFiltres.length,
+                    itemBuilder: (context, index) {
+                      final livre = _livresFiltres[index];
+                      return BookCard(
+                        livre: livre,
+                        onTap: () => context.go('/livre/${livre.id}'),
+                      );
+                    },
+                  )
+                : ListView.builder(
+                    itemCount: _livresFiltres.length,
+                    itemBuilder: (context, index) {
+                      final livre = _livresFiltres[index];
+                      return BookCard(
+                        livre: livre,
+                        onTap: () => context.go('/livre/${livre.id}'),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
           ),
         ],
       ),

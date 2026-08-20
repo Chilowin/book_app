@@ -1,17 +1,30 @@
 # book_app
 
-A new Flutter project.
+## description
 
-## Getting Started
+Application Flutter multi écrans pour gestion de livres
 
-This project is a starting point for a Flutter application.
+## Fonctionnalités
 
-A few resources to get you started if this is your first Flutter project:
+-Listes de Livres avec recherche
+-Détails d'un livre avec une note moyenne
+-Formulaire d'avis
+-Theme Sombre/Clair
+-Responsive tablette / téléphone
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Instructions de lancement
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Cloner le repo
+2. `flutter pub get`
+3. `flutter run`
+
+## captures d'écran
+
+![Accueil](screenschots/Acceuil.png/)
+![AccueilSombre](screenschots/AcceuilSombre.png)
+![Liste](screenschots/Liste.png)
+![Détail](screenschots/Details.png)
+![Avis](screenschots/Avis.png)
+![AvisErreur](screenschots/AvisErreur.png)
+![Parametres](screenschots/ParametresClaire.png)
+![ParametresSombre](screenschots/ParametresSombre.png)

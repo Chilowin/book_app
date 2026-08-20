@@ -21,11 +21,20 @@ class DetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 270,
-              width: 150,
-              color: Colors.grey[300],
-              child: const Icon(Icons.book, size: 60, color: Colors.grey),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                livre.couverture,
+                height: 270,
+                width: 150,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  height: 270,
+                  width: 150,
+                  color: Colors.grey[300],
+                  child: const Icon(Icons.book, size: 60, color: Colors.grey),
+                ),
+              ),
             ),
             Text(livre.titre),
             Text('par ${livre.auteur}'),
