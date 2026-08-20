@@ -1,12 +1,14 @@
 class Review {
   final int id;
   final int bookId;
+  final String nom;
   final String commentaire;
   final double note;
 
   Review({
     required this.id,
     required this.bookId,
+    required this.nom,
     required this.commentaire,
     required this.note,
   });
@@ -16,6 +18,7 @@ class Review {
       id: json['id'] as int,
       bookId: json['bookId'] as int,
       commentaire: json['commentaire'] as String,
+      nom: json['nom'] as String,
       note: (json['note'] as num).toDouble(),
     );
   }
