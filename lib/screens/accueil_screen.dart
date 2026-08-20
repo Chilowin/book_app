@@ -1,6 +1,8 @@
+import 'package:book_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../services/mock_data.dart';
+
 
 //Changer les placeholder par des images à placer dans un dossier assets après que le projet soit bein fonctionnel.
 class AccueilScreen extends StatelessWidget {
@@ -11,11 +13,7 @@ class AccueilScreen extends StatelessWidget {
     final livres = MockData.getBooks().take(4).toList();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Accueil'),
-        centerTitle: true,
-        elevation: 4,
-      ),
+      appBar: CustomAppBar(title: 'Acceuil'),
       body: Column(
         children: [
           const Text('Livres en Vedette'),

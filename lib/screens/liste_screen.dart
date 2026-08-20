@@ -1,3 +1,4 @@
+import 'package:book_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../models/book.dart';
@@ -23,7 +24,7 @@ class _ListeScreenState extends State<ListeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Livres')),
+      appBar: CustomAppBar(title: 'Liste'),
       body: Column(
         children: [
           Padding(

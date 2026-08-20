@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/storage_service.dart';
 import '../models/review.dart';
 import 'package:go_router/go_router.dart';
+import '../widgets/custom_app_bar.dart';
 
 class AvisScreen extends StatefulWidget {
   final int bookId;
@@ -20,7 +21,7 @@ class _AvisScreenState extends State<AvisScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Donner un avis')),
+      appBar: CustomAppBar(title: 'Avis'),
       body: Form(
         key: _formKey,
         child: Column(

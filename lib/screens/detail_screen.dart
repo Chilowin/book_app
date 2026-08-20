@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../services/mock_data.dart';
+import '../widgets/custom_app_bar.dart';
 
 class DetailScreen extends StatelessWidget {
   final int id;
@@ -16,7 +17,7 @@ class DetailScreen extends StatelessWidget {
         ? 0.0
         : avis.fold(0.0, (sum, a) => sum + a.note) / avis.length;
     return Scaffold(
-      appBar: AppBar(title: const Text('Details')),
+      appBar: CustomAppBar(title: 'Details'),
       body: SingleChildScrollView(
         child: Column(
           children: [
