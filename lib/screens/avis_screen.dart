@@ -22,65 +22,88 @@ class _AvisScreenState extends State<AvisScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'Avis'),
-      body: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            TextFormField(
-              controller: _nomController,
-              decoration: InputDecoration(
-                labelText: 'Nom',
-                hintText: 'Entrez votre nom',
-                border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(15),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              const Text(
+                'Votre avis',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Le nom est obligatoire';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: _commentaireController,
-              decoration: InputDecoration(
-                labelText: 'Commentaire',
-                hintText: 'Entrez votre commentaire/avis',
-                border: OutlineInputBorder(),
+              const SizedBox(height: 24),
+              TextFormField(
+                controller: _nomController,
+                decoration: InputDecoration(
+                  labelText: 'Nom',
+                  hintText: 'Entrez votre nom',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Le nom est obligatoire';
+                  }
+                  return null;
+                },
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Dites au moins quelque chose';
-                }
-                return null;
-              },
-            ),
-            Slider(
-              value: _note,
-              min: 1.0,
-              max: 5.0,
-              divisions: 8,
-              label: _note.toString(),
-              onChanged: (val) => setState(() => _note = val),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                if (_formKey.currentState!.validate()) {
-                  final storageService = StorageService();
-                  await storageService.saveReview(
-                    Review(
-                      id: DateTime.now().millisecondsSinceEpoch,
-                      bookId: widget.bookId,
-                      nom: _nomController.text,
-                      commentaire: _commentaireController.text,
-                      note: _note,
-                    ),
-                  );
-                  if (context.mounted) context.pop();
-                }
-              },
-              child: const Text('Soumettre'),
-            ),
-          ],
+              SizedBox(height: 10),
+              TextFormField(
+                maxLines: 3,
+                controller: _commentaireController,
+                textAlignVertical: TextAlignVertical.top,
+                decoration: InputDecoration(
+                  labelText: 'Commentaire',
+                  hintText: 'Entrez votre commentaire/avis',
+                  border: OutlineInputBorder(),
+                  alignLabelWithHint: true,
+                ),
+
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Dites au moins quelque chose';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 24),
+
+              Slider(
+                value: _note,
+                min: 1.0,
+                max: 5.0,
+                divisions: 8,
+                label: _note.toString(),
+                onChanged: (val) => setState(() => _note = val),
+              ),
+              Text(
+                'Note : ${_note.toStringAsFixed(1)} / 5',
+                style: const TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 25),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      final storageService = StorageService();
+                      await storageService.saveReview(
+                        Review(
+                          id: DateTime.now().millisecondsSinceEpoch,
+                          bookId: widget.bookId,
+                          nom: _nomController.text,
+                          commentaire: _commentaireController.text,
+                          note: _note,
+                        ),
+                      );
+                      if (context.mounted) context.pop();
+                    }
+                  },
+                  child: const Text('Soumettre'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
