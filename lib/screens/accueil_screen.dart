@@ -15,7 +15,30 @@ class AccueilScreen extends StatelessWidget {
       appBar: CustomAppBar(title: 'Acceuil'),
       body: Column(
         children: [
-          const Text('Livres en Vedette'),
+          // Avant "Livres en Vedette", ajoute
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+            child: Text(
+              'Bienvenue sur Book App',
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              'Découvrez et notez vos livres préférés',
+              style: TextStyle(color: Colors.grey),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text(
+              '📚 Livres en Vedette',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 26),
+
           SizedBox(
             height: 220,
             child: ListView(
@@ -70,9 +93,11 @@ class AccueilScreen extends StatelessWidget {
                   .toList(),
             ),
           ),
-          TextButton(
+          SizedBox(height: 46),
+          ElevatedButton.icon(
             onPressed: () => context.go('/livres'),
-            child: Text('voir tous les livres'),
+            icon: const Icon(Icons.library_books),
+            label: const Text('Voir tous les livres'),
           ),
         ],
       ),
